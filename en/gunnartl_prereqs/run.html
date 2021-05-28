@@ -1,0 +1,413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run CTSM &mdash; CLM-NorwayDoc 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Recommended spinup routine for CTSM" href="spinup.html" />
+    <link rel="prev" title="Setup CTSM" href="setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CLM-NorwayDoc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                gunnartl_prereqs
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get.html">Get CTSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup CTSM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run CTSM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-your-very-first-ctsm-case">Run your very first CTSM case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inputdata">Inputdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#make-a-case">Make a case</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-the-configuration">1) check the configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-configuration">2) Change configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-case">3) setup case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-user-nl-clm">4) edit user_nl_clm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-build">5) case build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-case">6) run case</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#run-fates">Run fates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-single-cell-case">Run a single cell case</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#out-of-the-box">Out of the box</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Change configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#run-a-regional-case">Run a regional case</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spinup.html">Recommended spinup routine for CTSM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CLM-NorwayDoc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Run CTSM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/sunnivin/rtd-github-pages/blob/master/docs/run.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="run-ctsm">
+<h1>Run CTSM<a class="headerlink" href="#run-ctsm" title="Permalink to this headline">¶</a></h1>
+<p>NB! this example is connected to project nn2806k (for your own project, change the project code. To see available projects and resources, use cost -p):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CESM_ACCOUNT</span><span class="o">=</span><span class="n">nn2806k</span>
+</pre></div>
+</div>
+<section id="run-your-very-first-ctsm-case">
+<h2>Run your very first CTSM case<a class="headerlink" href="#run-your-very-first-ctsm-case" title="Permalink to this headline">¶</a></h2>
+<p>LOAD externals of CTSM (FATES and so on; only necessary first time), in folder ~/ctsm. If you are updating FATES go here first: (<a class="reference external" href="https://github.com/NordicESMhub/ctsm-dev/blob/master/Updating_FATES.md">https://github.com/NordicESMhub/ctsm-dev/blob/master/Updating_FATES.md</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">manage_externals</span><span class="o">/</span><span class="n">checkout_externals</span>
+</pre></div>
+</div>
+<p>navigate to ~/ctsm/cime/scripts/</p>
+</section>
+<section id="inputdata">
+<h2>Inputdata<a class="headerlink" href="#inputdata" title="Permalink to this headline">¶</a></h2>
+<p>(only first time or whenever it disappears in your workdir i.e. 45 days)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/ctsm/cime/scripts
+./link_dirtree $CESM_DATA /work/users/$USER/inputdata
+</pre></div>
+</div>
+</section>
+<section id="make-a-case">
+<h2>Make a case<a class="headerlink" href="#make-a-case" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./create_newcase --case ~/cases/I2000Clm50BgcCruGs  --compset I2000Clm50BgcCruGs   --res f19_g17 --machine abel --run-unsupported --project $CESM_ACCOUNT
+</pre></div>
+</div>
+<p>navigate to ~/cases/I2000Clm50BgcCruGs</p>
+<section id="check-the-configuration">
+<h3>1) check the configuration<a class="headerlink" href="#check-the-configuration" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlquery</span> <span class="o">--</span><span class="n">l</span> <span class="c1">#(--l list --f file)</span>
+</pre></div>
+</div>
+<p>eg</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlquery</span> <span class="n">STOP_OPTION</span>
+</pre></div>
+</div>
+</section>
+<section id="change-configuration">
+<h3>2) Change configuration<a class="headerlink" href="#change-configuration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>For instance, to change the duration of a simulation to 5 days:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_OPTION</span><span class="o">=</span><span class="n">ndays</span> <span class="c1">#(nyears, nmonths)</span>
+<span class="o">./</span><span class="n">xmlchange</span> <span class="n">STOP_N</span><span class="o">=</span><span class="mi">5</span> <span class="c1">#(then 5 days)</span>
+</pre></div>
+</div>
+<p>or edit the xml files is another way to change these parameters (<strong>not recommended</strong>).</p>
+</section>
+<section id="setup-case">
+<h3>3) setup case<a class="headerlink" href="#setup-case" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">setup</span>  <span class="c1">#(--reset)</span>
+</pre></div>
+</div>
+</section>
+<section id="edit-user-nl-clm">
+<h3>4) edit user_nl_clm<a class="headerlink" href="#edit-user-nl-clm" title="Permalink to this headline">¶</a></h3>
+<p>add this below</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hist_mfilt</span><span class="o">=</span><span class="mi">5</span> <span class="c1">#(number of output files)</span>
+<span class="n">hist_nhtfrq</span><span class="o">=-</span><span class="mi">24</span> <span class="c1">#(means daily outputs)</span>
+</pre></div>
+</div>
+<p><cite>hist_mfilt</cite> allows you to specify the number of output files and <cite>hist_nhtfrq</cite> the frequency; here <cite>-24</cite> means daily outputs.</p>
+</section>
+<section id="case-build">
+<h3>5) case build<a class="headerlink" href="#case-build" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
+</pre></div>
+</div>
+<p><strong>Remark</strong>: if your build fails or if you make changes and need to rebuild, make sure you clean the previous build:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span> <span class="o">--</span><span class="n">clean</span>
+</pre></div>
+</div>
+</section>
+<section id="run-case">
+<h3>6) run case<a class="headerlink" href="#run-case" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="run-fates">
+<h2>Run fates<a class="headerlink" href="#run-fates" title="Permalink to this headline">¶</a></h2>
+<p>NB! Fates is not automatically checked out with the latest version (as it is still under development), and this has to be done manually.</p>
+<p>Follow <a class="reference external" href="https://github.com/NordicESMhub/ctsm-dev/blob/master/Updating_FATES">https://github.com/NordicESMhub/ctsm-dev/blob/master/Updating_FATES</a> (based on <a class="reference external" href="https://github.uio.no/huit/clm5.0_notes/issues/26">https://github.uio.no/huit/clm5.0_notes/issues/26</a> and <a class="reference external" href="https://github.com/ESCOMP/ctsm/wiki/Protocols-on-updating-FATES-within-CTSM">https://github.com/ESCOMP/ctsm/wiki/Protocols-on-updating-FATES-within-CTSM</a>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./create_newcase --case ../../../ctsm_cases/fates_f19_g17 --compset 2000_DATM%GSWP3v1_CLM50%FATES_SICE_SOCN_MOSART_SGLC_SWAV --res f19_g17 --machine abel --run-unsupported --project $CESM_ACCOUNT
+</pre></div>
+</div>
+</section>
+<section id="run-a-single-cell-case">
+<h2>Run a single cell case<a class="headerlink" href="#run-a-single-cell-case" title="Permalink to this headline">¶</a></h2>
+<p>CLM supports running using single-point or regional datasets that are customized to a particular region.</p>
+<p>In the section below we show you how to run ready to use single-point configurations (out of the box) and then show you how to create your own dataset for any location of your choice.</p>
+<section id="out-of-the-box">
+<h3>Out of the box<a class="headerlink" href="#out-of-the-box" title="Permalink to this headline">¶</a></h3>
+<p>To run for the Brazil test site do the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export CESM_ACCOUNT=nn2806k
+
+./create_newcase -case ~/cases/testSPDATASET -res 1x1_brazil -compset I2000Clm50SpGs  --machine abel --run-unsupported --project $CESM_ACCOUNT
+</pre></div>
+</div>
+<p><strong>Remark</strong>: make sure you set <strong>CESM_ACCOUNT</strong> to your project.
+Customized
+~~~~~~~~~~~</p>
+<ul class="simple">
+<li><p>Step-1:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Step-2: For atmospheric forcing (own atm forcing and surface data) (include scripts)</p></li>
+</ul>
+<section id="id1">
+<h4>Change configuration<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">xmlchange</span> <span class="n">NTASKS</span><span class="o">=</span><span class="mi">1</span> <span class="c1">#(number of CPU&#39;s, can be increased if excitation error)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="run-a-regional-case">
+<h2>Run a regional case<a class="headerlink" href="#run-a-regional-case" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spinup.html" class="btn btn-neutral float-right" title="Recommended spinup routine for CTSM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup.html" class="btn btn-neutral float-left" title="Setup CTSM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, CLM-Norway
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: gunnartl_prereqs
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/rtd-github-pages/en/gunnartl_prereqs/">en</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/rtd-github-pages/es/gunnartl_prereqs/">es</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/rtd-github-pages/en/dev/">dev</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/rtd-github-pages/en/gunnartl_prereqs/">gunnartl_prereqs</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/rtd-github-pages/en/master/">master</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/rtd-github-pages/en/gunnartl_prereqs/CLM-NorwayDoc-docs_en_gunnartl_prereqs.pdf">pdf</a></dd>
+        
+          <dd><a href="/rtd-github-pages/en/gunnartl_prereqs/CLM-NorwayDoc-docs_en_gunnartl_prereqs.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
